@@ -21,6 +21,7 @@ To use this tool, you need to set up the following environment variables. You ca
 - COOKIE_D=example
 - WORKSPACE=example
 - TOKEN=example
+
 You can either copy `.env.example` to `.env` and modify the values, or set these variables directly in your environment.
 
 ```
@@ -28,10 +29,10 @@ cp .env.example .env
 # Then edit the .env file to include your actual values
 ```
 
-You could read this [docs](docs/README.md) to get COOKIE_D and TOKEN.
+You could read this [docs](docs/README.md) to get `COOKIE_D` and `TOKEN`.
 
 
-WORKSPACE is something like this -> https://{{WORKSPACE}}/customize/emoji
+`WORKSPACE` is the slack workspace, something like this -> https://{{WORKSPACE}}.slack.com/customize/emoji
 
 
 ## Usage
@@ -39,7 +40,7 @@ WORKSPACE is something like this -> https://{{WORKSPACE}}/customize/emoji
 ### Batch upload emoji
 This script, main.py, is designed to upload emojis from a specified folder. The folder containing the emojis can be provided as an argument when running the script. If no folder is specified, the script will default to the `./tiles` folder.
 
-It use filename as emoji tag name, e.g. filename: **abc.png** -> emoji tag: **:abc:**
+It use filename as emoji tag name, e.g. filename: **abc_5_4.png** -> emoji tag: **:abc_5_4:**
 #### Example Usage
 ```
 python main.py -f /path/to/emoji/folder
