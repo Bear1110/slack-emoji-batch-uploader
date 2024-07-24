@@ -1,3 +1,4 @@
+'''Provide a func for split image'''
 import os
 from PIL import Image
 
@@ -14,6 +15,10 @@ def _write_txt_file(emoji_text, emoji_name, output_dir):
 
 
 def split_image(file_path, emoji_name, square_width, output_dir):
+    '''
+    Give a file_path, split it by square_width
+    Named tiled by emoji_name and saved it to output_dir.
+    '''
     image = Image.open(file_path)
     img_width, img_height = image.size
     os.makedirs(output_dir, exist_ok=True)

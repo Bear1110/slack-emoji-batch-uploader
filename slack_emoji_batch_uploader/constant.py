@@ -1,3 +1,4 @@
+'''Provide constant value in package'''
 import os
 from dotenv import load_dotenv
 load_dotenv()

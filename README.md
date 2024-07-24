@@ -2,7 +2,7 @@
 This tool provides the following functionalities:
 
 1. Split a large image into multiple tiles to assist users in uploading them as Slack emojis. (`split_to_tiles.py`)
-2. Read a folder and batch upload the images as emojis to Slack. (`main.py`)
+2. Read a folder and batch upload the images as emojis to Slack. (`upload_emoji.py`)
 3. Delete emojis from Slack based on filenames in a folder. (`delete_emoji.py`)
 
 ## Installation
@@ -38,12 +38,12 @@ You could read this [docs](docs/README.md) to get `COOKIE_D` and `TOKEN`.
 ## Usage
 
 ### Batch upload emoji
-This script, main.py, is designed to upload emojis from a specified folder. The folder containing the emojis can be provided as an argument when running the script. If no folder is specified, the script will default to the `./tiles` folder.
+This script, upload_emoji.py, is designed to upload emojis from a specified folder. The folder containing the emojis can be provided as an argument when running the script. If no folder is specified, the script will default to the `./tiles` folder.
 
 It use filename as emoji tag name, e.g. filename: **abc_5_4.png** -> emoji tag: **:abc_5_4:**
 #### Example Usage
 ```
-python main.py -f /path/to/emoji/folder
+python upload_emoji.py -f /path/to/emoji/folder
 ```
 
 ### Split image to tiles

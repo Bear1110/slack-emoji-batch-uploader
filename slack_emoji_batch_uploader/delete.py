@@ -1,7 +1,11 @@
+'''Provide a func call slack delete api'''
 import requests
 from slack_emoji_batch_uploader.constant import cookies, token, slack_delete
 
 def delete_emoji(emoji_name):
+    '''
+    Delete a emoji by emoji_name (emoji tag)
+    '''
     payload = {
         'token': token,
         'name': emoji_name,

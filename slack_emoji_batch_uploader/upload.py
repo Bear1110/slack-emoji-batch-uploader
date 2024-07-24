@@ -1,8 +1,12 @@
+'''Provide a func upload slack emoji'''
 import requests
 from slack_emoji_batch_uploader.constant import slack_add, cookies, token
 
 
 def upload_emoji(emoji_name, file_path):
+    '''
+    Upload a image to slack emoji, named emoji as emoji_name
+    '''
     files=[
         (
             'image',
