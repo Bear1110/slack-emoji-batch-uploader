@@ -1,11 +1,6 @@
 import argparse
-from os.path import isfile
 from slack_emoji_batch_uploader.split_image import split_image
-
-def is_file_exist(path):
-    assert isfile(path), f'[{path}] is not exist in your machine'
-    return path
-
+from slack_emoji_batch_uploader.utils import is_file_exist
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()

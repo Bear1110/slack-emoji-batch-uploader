@@ -1,16 +1,11 @@
 import argparse
 
 from os import listdir
-from os.path import isfile, join, basename, isdir
+from os.path import isfile, join
 from slack_emoji_batch_uploader.delete import delete_emoji
+from slack_emoji_batch_uploader.utils import get_extention, get_filename, is_folder_exist
 
 files_extensions = set(['png', 'jpg', 'jpeg'])
-
-def get_extention(file_path):
-    return file_path.split('.')[-1]
-
-def get_filename(file_path):
-    return basename(file_path).split('.')[0]
 
 
 def main(folder):
@@ -23,9 +18,6 @@ def main(folder):
         if delete_emoji(emoji_name):
             print(f'delete [{emoji_name}] {i + 1}/{len(onlyfiles)}')
 
-def is_folder_exist(path):
-    assert isdir(path), f'[{path}] is not a folder, either not exist in your machine'
-    return path
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
