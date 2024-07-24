@@ -24,4 +24,3 @@ def delete_emoji(emoji_name):
     if not response_json['ok']:
         print(emoji_name, response_json)
     return response_json['ok']
-    

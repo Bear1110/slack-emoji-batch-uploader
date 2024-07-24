@@ -20,4 +20,3 @@ def get_image_files(folder):
     files_extensions = set(['png', 'jpg', 'jpeg'])
     onlyfiles = [join(folder, f) for f in listdir(folder) if isfile(join(folder, f))]
     return [file_path for file_path in onlyfiles if get_extention(file_path) in files_extensions]
-    
