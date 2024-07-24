@@ -22,11 +22,8 @@ def upload_emoji(emoji_name, file_path):
         cookies=cookies,
         data=payload,
         files=files,
+        timeout=60,
     )
-    try:
-        res.raise_for_status()
-    except Exception as ex:
-        print(ex)
     response_json = res.json()
     if not response_json['ok']:
         print(file_path, emoji_name, response_json)

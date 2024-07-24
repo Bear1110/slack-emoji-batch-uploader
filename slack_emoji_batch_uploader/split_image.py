@@ -1,5 +1,5 @@
-from PIL import Image
 import os
+from PIL import Image
 
 
 def _save_tile(tile, filename, output_dir):

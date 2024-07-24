@@ -8,7 +8,14 @@ def delete_emoji(emoji_name):
         '_x_reason': 'customize-emoji-remove',
         '_x_mode': 'online'
       }
-    res = requests.request("POST", slack_delete, cookies=cookies, data=payload, files=[])
+    res = requests.request(
+        "POST",
+        slack_delete,
+        cookies=cookies,
+        data=payload,
+        files=[],
+        timeout=60
+    )
     response_json = res.json()
     if not response_json['ok']:
         print(emoji_name, response_json)
