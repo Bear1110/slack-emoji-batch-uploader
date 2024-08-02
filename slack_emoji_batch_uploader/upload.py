@@ -1,8 +1,16 @@
 '''Provide a func upload slack emoji'''
 import requests
+import backoff
 from slack_emoji_batch_uploader.constant import slack_add, cookies, token
 
+class RetryableException(Exception):
+    '''
+    exception for retryable error
+    '''
+    pass
 
+
+@backoff.on_exception(backoff.constant, RetryableException, max_tries=10, interval=20)
 def upload_emoji(emoji_name, file_path):
     '''
     Upload a image to slack emoji, named emoji as emoji_name
@@ -31,4 +39,7 @@ def upload_emoji(emoji_name, file_path):
     response_json = res.json()
     if not response_json['ok']:
         print(file_path, emoji_name, response_json)
+        if response_json['error'] == 'ratelimited':
+            print('Retry ratelimited')
+            raise RetryableException
     return response_json['ok']
