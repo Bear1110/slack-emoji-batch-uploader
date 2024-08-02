@@ -7,7 +7,6 @@ class RetryableException(Exception):
     '''
     exception for retryable error
     '''
-    pass
 
 
 @backoff.on_exception(backoff.constant, RetryableException, max_tries=10, interval=20)
