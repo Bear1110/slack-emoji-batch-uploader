@@ -5,8 +5,8 @@ import argparse
 from slack_emoji_batch_uploader.upload import upload_emoji
 from slack_emoji_batch_uploader.utils import (
     get_filename,
-    is_folder_exist,
     get_image_files,
+    is_folder_exist,
 )
 
 
@@ -31,5 +31,4 @@ if __name__ == "__main__":
         default="./tiles",
     )
     args = parser.parse_args()
-
     upload_emoji_in_folder(args.folder)

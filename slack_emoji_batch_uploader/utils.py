@@ -1,7 +1,7 @@
 """Provide some utils func, like file operation"""
 
 from os import listdir
-from os.path import isfile, join, basename, isdir
+from os.path import basename, isdir, isfile, join
 
 
 def get_extention(file_path):
@@ -23,10 +23,17 @@ def is_file_exist(path):
 
 
 def get_image_files(folder):
-    files_extensions = set(["png", "jpg", "jpeg"])
+    files_extensions = set(["png", "jpg", "jpeg", "gif"])
     onlyfiles = [join(folder, f) for f in listdir(folder) if isfile(join(folder, f))]
     return [
         file_path
         for file_path in onlyfiles
         if get_extention(file_path) in files_extensions
     ]
+
+
+def write_txt_file(emoji_text, emoji_name, output_dir):
+    tile_path = join(output_dir, f"{emoji_name}.txt")
+    with open(tile_path, "w") as text_file:
+        s = "\n".join(["".join(row) for row in emoji_text])
+        text_file.write(s)

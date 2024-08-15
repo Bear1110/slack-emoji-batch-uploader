@@ -1,8 +1,9 @@
 """Provide a func upload slack emoji"""
 
-import requests
 import backoff
-from slack_emoji_batch_uploader.constant import slack_add, cookies, token
+import requests
+
+from slack_emoji_batch_uploader.constant import cookies, slack_add, token
 
 
 class RetryableException(Exception):

@@ -5,8 +5,8 @@ import argparse
 from slack_emoji_batch_uploader.delete import delete_emoji
 from slack_emoji_batch_uploader.utils import (
     get_filename,
-    is_folder_exist,
     get_image_files,
+    is_folder_exist,
 )
 
 
