@@ -38,14 +38,10 @@ def split_gif(file_path, emoji_name, square_width, output_dir):
                 tile = frame.crop(box)
                 tile_key = (y, x)
                 tiles[tile_key].append(tile)
-
     for tile_key, frames in tiles.items():
         y, x = tile_key
         filename = f"{emoji_name}_{y//square_width}_{x//square_width}.gif"
         tile_path = os.path.join(output_dir, filename)
-        frames = []
-        for frame in frames:
-            frames.append(frame)
         frames[0].save(
             tile_path,
             save_all=True,
