@@ -12,7 +12,7 @@ poetry shell
 ```
 ### pip
 ```
-pip install -r requirement.txt
+pip install -r requirements.txt
 ```
 
 ## Prerequisites authication
